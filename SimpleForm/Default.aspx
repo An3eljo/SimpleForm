@@ -5,8 +5,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <form action="">
-
-        Name: <input type="text" name="Name" runat="server"/><br />
+        Name: <asp:TextBox runat="server" ID="Name"/><br />
 
         Email: <input type="text" name="Email" runat="server"/><br />
 
@@ -26,7 +25,7 @@
 
             <input type="radio" id="w" name="Geschlecht" value="Weiblich" runat="server"/>
 
-            <label for="w"> Weiblich</label>
+            <label for="w"> Weiblich </label>
 
         </fieldset>
 
@@ -69,9 +68,7 @@
         <br />
 
  
-
-        <button type="submit" name="submit">submit</button>
-
+        <asp:Button runat="server" OnClick="Submit_OnClick" Text="Submit"/>
     </form>
 
 </asp:Content>

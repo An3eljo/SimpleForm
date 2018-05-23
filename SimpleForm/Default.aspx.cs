@@ -11,9 +11,14 @@ namespace SimpleForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
-        
+
+        protected void Submit_OnClick(object sender, EventArgs e)
+        {
+            var name = Name.Text;
+            Response.Redirect("About.aspx");
+        }
     }
 }
