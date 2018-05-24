@@ -18,7 +18,21 @@ namespace SimpleForm
         protected void Submit_OnClick(object sender, EventArgs e)
         {
             var name = TextBoxName.Text;
-            
+            var email = TextBoxEmail.Text;
+
+            RadioButton selectedSex;
+            if (RadioButtonSexMale.Checked)
+            {
+                selectedSex = RadioButtonSexMale;
+            }
+            else if (RadioButtonSexFemale.Checked)
+            {
+                selectedSex = RadioButtonSexFemale;
+            }
+
+            var age = DropDownAge.SelectedItem;
+            var comment = TextBoxComment.Text;
+
             Response.Redirect("About.aspx");
         }
     }

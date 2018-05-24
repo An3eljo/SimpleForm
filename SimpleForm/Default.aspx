@@ -21,7 +21,7 @@
         <label>Age</label>
         <br/>
         <asp:DropDownList runat="server" ID="DropDownAge">
-            <asp:ListItem Text="<10"/>
+            <asp:ListItem Text="<10" Selected="True"/>
             <asp:ListItem Text="<20"/>
             <asp:ListItem Text="<30"/>
             <asp:ListItem Text="<50"/>
@@ -33,7 +33,7 @@
 
         <label>Comment</label>
         <br/>
-        <asp:TextBox runat="server" ID="TextBoxComment" TextMode="MultiLine" Rows="4" Columns="35" Style="overflow-scrolling: auto"></asp:TextBox>            
+        <asp:TextBox runat="server" ID="TextBoxComment" TextMode="MultiLine" Rows="4" Columns="35" Style="overflow-scrolling: auto"/>            
         
         <br/>
         <br/>

@@ -17,9 +17,7 @@ namespace SimpleForm
         
         protected void OnClick(object sender, EventArgs e)
         {
-            var allVariables = Request.Form.AllKeys;
-
-            var t = Request.Form["fname"];
+            
         }
     }
 }
