@@ -17,7 +17,8 @@ namespace SimpleForm
 
         protected void Submit_OnClick(object sender, EventArgs e)
         {
-            var name = Name.Text;
+            var name = TextBoxName.Text;
+            
             Response.Redirect("About.aspx");
         }
     }

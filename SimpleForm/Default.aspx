@@ -4,38 +4,39 @@
     
     <form action="">
         
-        Name: <asp:TextBox runat="server" ID="Name"/><br />
-        Email: <input type="text" name="Email" runat="server"/><br />
+        <label>Personal informations</label>
+        <br/>
+        Name: <asp:TextBox runat="server" ID="TextBoxName"/><br />
+        Email: <asp:TextBox runat="server" ID="TextBoxEmail" /><br />
         
-        <br />
+        <br/>
         
-        <p>Geben Sie Ihre Geschlecht an</p>
-        <fieldset>
-            <input type="radio" id="m" name="Geschlecht" value="Männlich" runat="server"/>
-            <label for="m"> Männlich</label>
-            <input type="radio" id="w" name="Geschlecht" value="Weiblich" runat="server"/>
-            <label for="w"> Weiblich </label>
-        </fieldset>
+        <label>Your sex</label>
+        <br/>
+        <asp:RadioButton runat="server" ID="RadioButtonSexMale" GroupName="RadioButtonGroupSex" Text="Male"/>
+        <asp:RadioButton runat="server" ID="RadioButtonSexFemale" GroupName="RadioButtonGroupSex" Text="Female"/>
         
-        <br />
+        <br/>
         
-        <label for="Alter">Alter</label>
-        <input name="Alter" list="Alter" />
+        <label>Age</label>
+        <br/>
+        <asp:DropDownList runat="server" ID="DropDownAge">
+            <asp:ListItem Text="<10"/>
+            <asp:ListItem Text="<20"/>
+            <asp:ListItem Text="<30"/>
+            <asp:ListItem Text="<50"/>
+            <asp:ListItem Text="<70"/>
+        </asp:DropDownList>
+        
+        <br/>
+        <br/>
 
-        <datalist id="Alter">
-            <option value="Unter 10"></option>
-            <option value="Unter 20"></option>
-            <option value="Unter 30"></option>
-            <option value="Unter 50"></option>
-            <option value="Unter 70"></option>
-        </datalist>
+        <label>Comment</label>
+        <br/>
+        <asp:TextBox runat="server" ID="TextBoxComment" TextMode="MultiLine" Rows="4" Columns="35" Style="overflow-scrolling: auto"></asp:TextBox>            
         
-        <br />
-        
-        <label for="text">Kommentar</label>
-        <textarea id="text" name="Kommentar" cols="35" rows="4" runat="server"></textarea>               
-        
-        <br />
+        <br/>
+        <br/>
         
         <asp:Button runat="server" OnClick="Submit_OnClick" Text="Submit"/>
 
