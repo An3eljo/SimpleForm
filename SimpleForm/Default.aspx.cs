@@ -12,15 +12,17 @@ namespace SimpleForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Session.Timeout = 10;
         }
 
 
         protected void Submit_OnClick(object sender, EventArgs e)
         {
-            
-            Session["UserName"] = TextBoxName.Text;
-            Session["UserEmail"] = TextBoxEmail.Text;
+            Session.Add("UserName", TextBoxName.Text);
+            Session.Add("UserEmail", TextBoxEmail.Text);
+
+            //Session["UserName"] = TextBoxName.Text;
+            //Session["UserEmail"] = TextBoxEmail.Text;
             //var name = TextBoxName.Text;
             //var email = TextBoxEmail.Text;
 
@@ -34,10 +36,13 @@ namespace SimpleForm
             {
                 selectedSex = RadioButtonSexFemale;
             }
-            Session["UserSelectedSex"] = selectedSex;
+            Session.Add("UserSelectedSex", selectedSex);
+            //Session["UserSelectedSex"] = selectedSex;
 
-            Session["UserAge"] = DropDownAge.SelectedItem;
-            Session["UserComment"] = TextBoxComment.Text;
+            Session.Add("UserAge", DropDownAge.SelectedItem);
+            Session.Add("UserComment", TextBoxComment.Text);
+            //Session["UserAge"] = DropDownAge.SelectedItem;
+            //Session["UserComment"] = TextBoxComment.Text;
             //var age = DropDownAge.SelectedItem;
             //var comment = TextBoxComment.Text;
 
