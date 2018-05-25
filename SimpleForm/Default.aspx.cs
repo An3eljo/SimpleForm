@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,10 +18,14 @@ namespace SimpleForm
 
         protected void Submit_OnClick(object sender, EventArgs e)
         {
-            var name = TextBoxName.Text;
-            var email = TextBoxEmail.Text;
+            
+            Session["UserName"] = TextBoxName.Text;
+            Session["UserEmail"] = TextBoxEmail.Text;
+            //var name = TextBoxName.Text;
+            //var email = TextBoxEmail.Text;
 
-            RadioButton selectedSex;
+            
+            RadioButton selectedSex = null;
             if (RadioButtonSexMale.Checked)
             {
                 selectedSex = RadioButtonSexMale;
@@ -29,9 +34,12 @@ namespace SimpleForm
             {
                 selectedSex = RadioButtonSexFemale;
             }
+            Session["UserSelectedSex"] = selectedSex;
 
-            var age = DropDownAge.SelectedItem;
-            var comment = TextBoxComment.Text;
+            Session["UserAge"] = DropDownAge.SelectedItem;
+            Session["UserComment"] = TextBoxComment.Text;
+            //var age = DropDownAge.SelectedItem;
+            //var comment = TextBoxComment.Text;
 
             Response.Redirect("About.aspx");
         }
