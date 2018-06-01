@@ -13,23 +13,19 @@ namespace SimpleForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            OnSubmitClick(this, EventArgs.Empty);
         }
 
         private void OnSubmitClick(object sender, EventArgs e)
         {
-            var username = ;
-            var password = ;
+            var username = "testuser";
+            var password = "testpass";
             var connection = new MySqlConnection(
-                "Server=tcp:andrischool.database.windows.net,1433;" +
-                "Initial Catalog=M133_Test;Persist Security Info=False;" +
-                "User ID={your_username};Password={your_password};" +
-                "MultipleActiveResultSets=False;Encrypt=True;" +
-                "TrustServerCertificate=False;Connection Timeout=30;");
+                "Server=localhost; Port=3306; Database=dbschool; Uid=root; Pwd=;SSLMode=None");
             connection.Open();
 
             MySqlDataReader dataReader =
-                new MySqlCommand($"Select * from Users where name='{}' and password='{}'", connection).ExecuteReader();
+                new MySqlCommand($"Select * from user where Username='{username}' and Password='{password}';", connection).ExecuteReader();
 
             var newUser = new User();
             while (dataReader.Read())
@@ -38,11 +34,12 @@ namespace SimpleForm
                 {
                     newUser.Username = username;
                     newUser.Password = password;
-                    newUser.Id = (int) dataReader["Id"];
+                    newUser.Id = (int)dataReader["Id"];
                     newUser.Email = dataReader["Email"] as string;
                 }
             }
             Session.Add("CurrentUser", newUser);
+            Response.Redirect("About.aspx");
         }
     }
 }

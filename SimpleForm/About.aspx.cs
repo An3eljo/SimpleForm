@@ -11,7 +11,12 @@ namespace SimpleForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Session.Clear();
+
+        }
+
+        protected void OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Logout.aspx");
         }
     }
 }

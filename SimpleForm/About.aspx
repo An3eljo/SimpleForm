@@ -5,5 +5,7 @@
     <br/>
     <asp:Label runat="server"><%= "Name: " + ((User) Session["CurrentUser"]).Username %></asp:Label>
     <br/>
-    <asp:Label runat="server"><%= "Your comment: " + ((User) Session["CurrentUser"]).Id %></asp:Label>
+    <asp:Label runat="server"><%= "Id: " + ((User) Session["CurrentUser"]).Id %></asp:Label>
+    <br/>
+    <asp:Button runat="server" Text="Logout" OnClick="OnClick"/>
 </asp:Content>
