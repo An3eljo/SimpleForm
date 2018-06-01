@@ -7,9 +7,9 @@ namespace SimpleForm
 {
     public class User
     {
-        internal int Id;
-        internal string Username;
-        internal string Email;
-        internal string Password;
+        public int Id;
+        public string Username;
+        public string Email;
+        public string Password;
     }
 }

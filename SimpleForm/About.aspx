@@ -1,11 +1,9 @@
 ﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="SimpleForm.About" %>
-
+<%@ Import namespace="SimpleForm" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Label runat="server"><%= "Email: " + (string) Session["UserEmail"] %></asp:Label> 
+    <asp:Label runat="server"><%= "Email: " +  ((User) Session["CurrentUser"]).Email %></asp:Label> 
     <br/>
-    <asp:Label runat="server"><%= "Name: " + (string) Session["UserName"] %></asp:Label>
+    <asp:Label runat="server"><%= "Name: " + ((User) Session["CurrentUser"]).Username %></asp:Label>
     <br/>
-    <asp:Label runat="server"><%= "Your comment: " + (string) Session["UserComment"] %></asp:Label>
-    <br/>
-    <asp:Label runat="server"><%= "Selected sex: " + ((RadioButton) Session["UserSelectedSex"]).Text %></asp:Label>
+    <asp:Label runat="server"><%= "Your comment: " + ((User) Session["CurrentUser"]).Id %></asp:Label>
 </asp:Content>
